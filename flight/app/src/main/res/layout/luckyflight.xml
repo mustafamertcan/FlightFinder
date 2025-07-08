@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_light">
+
+    <!-- Top Navigation Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        android:paddingHorizontal="16dp">
+
+        <!-- Logo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="TicketWings"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <!-- Profile Icon -->
+        <ImageView
+            android:id="@+id/profileButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_circle_svg"
+            android:tint="@android:color/white"/>
+    </RelativeLayout>
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <!-- Lucky Flight Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lucky Flight"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I Feel Lucky!"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:layout_marginBottom="48dp"/>
+
+        <!-- Lucky Wheel Container -->
+        <FrameLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginBottom="48dp"
+            android:background="@drawable/circle_background_white">
+
+            <!-- Wheel View would be added programmatically -->
+            <ImageView
+                android:id="@+id/wheelImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/lucky_wheel_background"/>
+        </FrameLayout>
+
+        <!-- Spin Button -->
+        <Button
+            android:id="@+id/spinButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="SPIN THE WHEEL"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@android:color/white"
+            android:elevation="8dp"/>
+    </LinearLayout>
+</RelativeLayout>

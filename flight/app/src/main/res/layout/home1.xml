@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/blue_gradient_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TicketWings"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"
+            android:letterSpacing="0.03"/>
+
+        <!-- Search Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="#E6FFFFFF"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- FROM Section -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FROM"
+                    android:textSize="16sp"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="16dp"
+                    app:boxStrokeColor="@color/purple_500"
+                    app:hintTextColor="@color/purple_500">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/fromSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Select departure city"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- TO Section -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TO"
+                    android:textSize="16sp"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="24dp"
+                    app:boxStrokeColor="@color/purple_500"
+                    app:hintTextColor="@color/purple_500">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/toSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Select arrival city" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Departure Date -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DEPARTURE DATE"
+                    android:textSize="16sp"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/departureMonthText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MARCH 2025"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Calendar Grid -->
+                <GridLayout
+                    android:id="@+id/departureCalendarGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="7"
+                    android:rowCount="6"
+                    android:layout_marginBottom="24dp">
+
+                    <!-- Day headers -->
+                    <TextView android:text="S" android:gravity="center" android:textColor="@color/purple_500"/>
+                    <TextView android:text="M" android:gravity="center" android:textColor="@color/purple_500"/>
+                    <TextView android:text="T" android:gravity="center" android:textColor="@color/purple_500"/>
+                    <TextView android:text="W" android:gravity="center" android:textColor="@color/purple_500"/>
+                    <TextView android:text="T" android:gravity="center" android:textColor="@color/purple_500"/>
+                    <TextView android:text="F" android:gravity="center" android:textColor="@color/purple_500"/>
+                    <TextView android:text="S" android:gravity="center" android:textColor="@color/purple_500"/>
+
+                    <!-- Calendar days would be added programmatically -->
+                </GridLayout>
+
+                <!-- Return Date -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RETURN DATE"
+                    android:textSize="16sp"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/returnMonthText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MARCH 2025"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Calendar Grid -->
+                <GridLayout
+                    android:id="@+id/returnCalendarGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:columnCount="7"
+                    android:rowCount="6">
+
+                    <!-- Day headers -->
+                    <TextView
+                        android:gravity="center"
+                        android:text="S"
+                        android:textColor="@color/purple_500" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="M"
+                        android:textColor="@color/purple_500" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="T"
+                        android:textColor="@color/purple_500" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="W"
+                        android:textColor="@color/purple_500" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="T"
+                        android:textColor="@color/purple_500" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="F"
+                        android:textColor="@color/purple_500" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="S"
+                        android:textColor="@color/purple_500" />
+
+                    <!-- Calendar days would be added programmatically -->
+                </GridLayout>
+
+                <!-- Passenger Info -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PASSENGERS"
+                    android:textSize="16sp"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Adults"
+                            android:textSize="14sp"
+                            android:textColor="@color/black"
+                            android:layout_marginBottom="8dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            app:strokeColor="@color/purple_500"
+                            app:strokeWidth="1dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Children"
+                            android:textSize="14sp"
+                            android:textColor="@color/black"
+                            android:layout_marginBottom="8dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            app:strokeColor="@color/purple_500"
+                            app:strokeWidth="1dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Infants"
+                            android:textSize="14sp"
+                            android:textColor="@color/black"
+                            android:layout_marginBottom="8dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            app:strokeColor="@color/purple_500"
+                            app:strokeWidth="1dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Search Button -->
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="SEARCH FLIGHTS"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:letterSpacing="0.03"
+            android:elevation="4dp"
+            style="@style/Widget.MaterialComponents.Button"/>
+    </LinearLayout>
+</ScrollView>
